@@ -5,7 +5,14 @@ const Schedule = ({events}) => {
     const h = 600
 
   return (
-    <div className='Schedule'>
+    <div className="ShudleTab">
+        <div className="timer">
+          {Array.from({ length: 24 }, (_, i) => (
+          <div className="timer_hour" key={i} style={{height: h/24-2}}
+          >{i + 1}</div>))
+        }
+        </div>
+        <div className='Schedule'>
         {events.map((e) => (
             <div className="event" 
             style={{backgroundColor: e.color, top: e.begin*(h/60/24), height: (e.end-e.begin)*(h/60/24)}}
@@ -15,6 +22,8 @@ const Schedule = ({events}) => {
          
             </div>
         ))}
+    </div>
+  )
     </div>
   )
 }
