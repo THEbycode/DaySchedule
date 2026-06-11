@@ -23,7 +23,7 @@ const Schedule = ({events}) => {
             </div>
         ))}
     </div>
-  )
+  
     </div>
   )
 }
